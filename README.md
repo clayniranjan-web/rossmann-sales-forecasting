@@ -1,6 +1,6 @@
 **Project status:** On going...
 
-# Problem statement
+# 🎯 Problem statement
 
 Rossmann operates over 3,000 drug stores in 7 European countries. Store sales are influenced by many factors, including promotions, competition, school and state holidays, seasonality, and locality. We are provided with historical sales data for 1,115 Rossmann stores in Germany.
 
@@ -13,4 +13,11 @@ Rossmann operates over 3,000 drug stores in 7 European countries. Store sales ar
 **Evaluation:** Root Mean Square Percentage Error (RMSPE)
 
 ## 📦 Dataset
-[Rossmann Store Sales](https://www.kaggle.com/competitions/rossmann-store-sales) dataset on Kaggle
+[Rossmann Store Sales](https://www.kaggle.com/competitions/rossmann-store-sales) dataset on Kaggle - A competition dataset with four files: `train.csv`, `test.csv`, `store.csv`, `sample_submission.csv`; more than 1M data points for training.
+
+
+## 🧭 Approach
+
+| Stage | What happened | 
+|---|---|
+| **Missing Values** | Replaced missing `CompetitionDistance` with its max value and `Promo2SinceWeek`, `Promo2SinceYear`, `PromoInterval`, `CompetitionOpenSinceMonth`, `CompetitionOpenSinceYear` with 0s |
