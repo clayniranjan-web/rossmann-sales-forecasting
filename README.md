@@ -18,6 +18,7 @@ Rossmann operates over 3,000 drug stores in 7 European countries. Store sales ar
 
 ## 🧭 Approach
 
-| Stage | What happened | 
+| Stage | What happened |
 |---|---|
 | **Missing Values** | Replaced missing `CompetitionDistance` with its max value and `Promo2SinceWeek`, `Promo2SinceYear`, `PromoInterval`, `CompetitionOpenSinceMonth`, `CompetitionOpenSinceYear` with 0s |
+| **Feature Engineering** | Extracted `Year`, `Month`, & `Day` from `Date` column. Computed the number of months for which a competitor had been open near the store. Dropped rows where closed stores had zero sales |
