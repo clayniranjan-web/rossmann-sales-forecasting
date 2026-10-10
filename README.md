@@ -10,13 +10,16 @@ Rossmann operates over 3,000 drug stores in 7 European countries. Store sales ar
 
 **Methods:** Random Forest and XGBoost
 
-**Evaluation:** Root Mean Square Percentage Error (RMSPE)
+
+**Evaluation Metrics:** MAE and R-Squared
+
+
 
 ## 📦Dataset
 [Rossmann Store Sales](https://www.kaggle.com/competitions/rossmann-store-sales) dataset on Kaggle - A competition dataset with more than 1M data points for **Training** including some additional information about each stores.
 
 
-## Cleaning & EDA
+## 🧹Cleaning & 🔍EDA
 
 * Replaced missing `CompetitionDistance` with its max value and `Promo2SinceWeek`, `Promo2SinceYear`, `PromoInterval` `CompetitionOpenSinceMonth`, `CompetitionOpenSinceYear` with 0s
 
@@ -33,15 +36,21 @@ Rossmann operates over 3,000 drug stores in 7 European countries. Store sales ar
 * Saved the clean `merged_df` as `merged.csv` to work with it in another notebook.
 
 
-## Train-Test Split
+## ✂️Train-Test Split
 
 * Kept last 6 weeks of data(40,282) to test and the rest(8,04,056) for training
 
 
-## Preprocessing
+## ⚙️Preprocessing
 
 * Before preprocessing only relevant columns have been chosen as input columns and **`Sales`** as output column.
 
 * Encoded categorical columns using `OneHotEncoder`.
 
 * Scaled numerical columns using `StandardScaler`.
+
+
+## 🌲Random Forest:
+
+**Base model:**  On the test set, the model is off by about **€392** (in either direction) which means MAE is `5.6%` of the **average daily sales**. The model also explains 96% of the variance in daily sales.
+
