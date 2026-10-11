@@ -50,7 +50,11 @@ Rossmann operates over 3,000 drug stores in 7 European countries. Store sales ar
 * Scaled numerical columns using `StandardScaler`.
 
 
-## 🌲Random Forest:
+## 🌲Baseline Random Forest:
 
-**Base model:**  On the test set, the model is off by about **€392** (in either direction) which means MAE is `5.6%` of the **average daily sales**. The model also explains 96% of the variance in daily sales.
+On the test set, the baseline random forest is off by about **€392** (in either direction) which means MAE is `5.6%` of the **average daily sales**. The model also explains 96% of the variance in daily sales.
 
+
+## 🚀Baseline XGBoost:
+
+On the test set, the baseline XGBoost is off by about **€501.5** which means MAE is `7%` of the **average daily sales**. The model also explains `94.41%` of the variance in daily sales, despite being the worse than baseline random forest.
