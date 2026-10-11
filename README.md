@@ -52,9 +52,17 @@ Rossmann operates over 3,000 drug stores in 7 European countries. Store sales ar
 
 ## 🌲Baseline Random Forest:
 
-On the test set, the baseline random forest is off by about **€392** (in either direction) which means MAE is `5.6%` of the **average daily sales**. The model also explains 96% of the variance in daily sales.
+* On the test set, the baseline model is off by about **€392** (in either direction) which means MAE is `5.6%` of the **average daily sales**.
+
+* This baseline model explains 96% of the variance in daily sales.
+
+* **Feature Importance:** Accoring to baseline random forest **`Customers`** is the most important feature.
 
 
 ## 🚀Baseline XGBoost:
 
-On the test set, the baseline XGBoost is off by about **€501.5** which means MAE is `7%` of the **average daily sales**. The model also explains `94.41%` of the variance in daily sales, despite being the worse than baseline random forest.
+* On the test set, the baseline XGBoost is off by about **€501.5** which means MAE is `7%` of the **average daily sales**. 
+
+* This baseline model explains `94.41%` of the variance in daily sales, despite being the worse than the baseline random forest.
+
+* **Feature Importance:** The baseline xgboost prioritize `Assortment_b` over `Customers`(2nd most importnat feature).
