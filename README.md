@@ -52,17 +52,31 @@ Rossmann operates over 3,000 drug stores in 7 European countries. Store sales ar
 
 ## 🌲Baseline Random Forest:
 
-* On the test set, the baseline model is off by about **€392** (in either direction) which means MAE is `5.6%` of the **average daily sales**.
+* On the test set, the baseline model is off by about **€789.43** (in either direction) which means MAE is `11%` of the **average daily sales**.
 
-* This baseline model explains 96% of the variance in daily sales.
+* This baseline model explains 83.67% of the variance in daily sales.
 
-* **Feature Importance:** Accoring to baseline random forest **`Customers`** is the most important feature.
+* **Feature Importance:** The baseline random forest picked **`CompetitionDistance`** as the most important feature.
 
 
 ## 🚀Baseline XGBoost:
 
-* On the test set, the baseline XGBoost is off by about **€501.5** which means MAE is `7%` of the **average daily sales**. 
+* On the test set, the baseline XGBoost is off by about **€1104.47** which means MAE is `15.83%` of the **average daily sales**. 
 
-* This baseline model explains `94.41%` of the variance in daily sales, despite being the worse than the baseline random forest.
+* It explains `73%` of the variance in daily sales.
 
-* **Feature Importance:** The baseline xgboost prioritize `Assortment_b` over `Customers`(2nd most importnat feature).
+* **Feature Importance:** The baseline xgboost picked `Assortment_b` as the most importnat feature.
+
+
+## Random Forest Hyperparameter Tuning:
+
+**Conclusion:** MAE fell by about €13 (roughly 1.6%) and R² rose by 0.002.
+
+| Model | MAE | R² |
+|---|---|---|
+| Baseline (default hyperparameters) | €789 | 0.837 |
+| Tuned (9 combinations, 5-fold TimeSeriesSplit) | €776 | 0.839 |
+
+**Limitations:**
+- Only 9 combinations were tested, so a better setting may exist.
+- I did not change one hyperparameter at a time, so I can't say which setting produced the gain.
