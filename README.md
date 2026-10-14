@@ -70,13 +70,26 @@ Rossmann operates over 3,000 drug stores in 7 European countries. Store sales ar
 
 ## Random Forest Hyperparameter Tuning:
 
-**Conclusion:** MAE fell by about €13 (roughly 1.6%) and R² rose by 0.002.
-
 | Model | MAE | R² |
 |---|---|---|
 | Baseline (default hyperparameters) | €789 | 0.837 |
 | Tuned (9 combinations, 5-fold TimeSeriesSplit) | €776 | 0.839 |
 
+**Conclusion:** MAE fell by about €13 (roughly 1.6%) and R² rose by 0.002.
+
 **Limitations:**
 - Only 9 combinations were tested, so a better setting may exist.
 - I did not change one hyperparameter at a time, so I can't say which setting produced the gain.
+
+
+
+## XGBoost Hyperparameter Tuning:
+Tuned XGBoost over 8 rounds of randomized search (TimeSeriesSplit cross-validation) and compared it with the untuned baseline and with the Random Forest from earlier. All models use the same features, training data and test set.
+
+| Model | Test MAE | Test R² |
+|---|---|---|
+| XGBoost baseline (defaults) | €1,104 | 0.73 |
+| XGBoost, round 3 (worst) | €1,726 | 0.40 |
+| XGBoost, round 5 | €959 | 0.784 |
+| XGBoost, round 7 | €806 | 0.831 |
+| **XGBoost, round 8 (best)** | **€779** | **0.836** |
